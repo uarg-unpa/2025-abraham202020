@@ -3,20 +3,24 @@ package Ejercios_en_clase.ejercicio_libro;
 
 public class Libro {
 
+
+
 //atributos
 
     private String titulo;
     private String autor;
     private Editorial editorial;
+    private int anio;
     private int paginas;
 
 //contructor
 
-    public Libro(String titulo, String autor, Editorial editorial, int paginas){
+    public Libro(String titulo, String autor, Editorial editorial, int anio, int paginas){
 
         this.titulo = titulo;
         this.autor = autor;
         this.editorial = editorial;
+        this.anio = anio; 
         this.paginas = paginas;
 
     }
@@ -31,7 +35,7 @@ public class Libro {
         return titulo;
     }
 
-    public void setautor(String autor){
+    public void setAutor(String autor){
         this.autor = autor;
     }
 //------------------------------------------
@@ -48,6 +52,16 @@ public class Libro {
     }    
 //------------------------------------------
 
+    public void setAnio(int anio){
+        this.anio = anio;
+    }
+
+    public int getAnio(){
+        return anio;
+    }    
+
+    //------------------------------------------
+
     public void setPaginas(int paginas){
         this.paginas = paginas;
     }
@@ -59,9 +73,9 @@ public class Libro {
 
     //metodos mas complejos
 
-    public boolean esReciente(int anio){
+    public boolean esReciente(){
 
-        if (anio >= 2025){
+        if (this.anio >= 2025){
             return true;
         } else {
             return false;
@@ -70,26 +84,26 @@ public class Libro {
 
         public void cambiarEditorial(String N_editorial){
 
-            editorial.setNombre(N_editorial);
+            editorial.setNombreEdit(N_editorial);
 
         }
 
-        public int contarPaginasEstimadas(){
+        public String contarPaginasEstimadas(){
 
-                int paginas_Estimadas = 300;
-                return (int) Math.ceil((double) paginas / paginas_Estimadas);
+            int paginasPorBloque = 300; // puedes cambiarlo si quieres
+            int bloques = (int) Math.ceil((double) this.paginas / paginasPorBloque);
+            return "El libro tiene " + this.paginas + " páginas (" + bloques + " bloques de lectura de " + paginasPorBloque + " páginas).";
+
         }
 
-        //libro.contarPaginasEstimadas()
         public String toString(){
         
-            return "[" + this.titulo + "] [" + this.autor + "] [" + this.editorial +  "]";
+            return "[" + this.titulo + "] [" + this.autor + "] [" + this.editorial +  "]  [" + this.anio +  "]   [" + this.paginas +  "]" ;
 
         }
-
-
-
 }
+
+
 /*consigna: Registro de un libro crea una clase Libro con atributos: titulo, autor y 
 editorial (objeto de clase Editorial con nombre y año). Puedes agregar atributos si 
 lo consideras necesario, incluye constructor completo, método esReciente() (boolean, 

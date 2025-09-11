@@ -1,33 +1,39 @@
 package Ejercios_en_clase.ejercicio_libro;
 
-public class Editorial {
+    public class Editorial {
     
-    private String nombre;
-    private int anio;
+        private String nombreEdit;
+        private int anioEdit;
 
-    public Editorial(String nombre, int anio)
+    public Editorial(String nombreEdit, int anioEdit)
         {
-            this.nombre = nombre;
-            this.anio = anio;
+            this.nombreEdit = nombreEdit;
+            this.anioEdit = anioEdit;
         }
 
 
-    public void setNombre(String nombre){
-    this.nombre=nombre;
+    public void setNombreEdit(String nombreEdit){
+        this.nombreEdit = nombreEdit;
     }
-    public String getNombre(){
-        return nombre;
+    public String getNombreEdit(){
+        return nombreEdit;
     }
 
     //--------------------------------
 
-    public void setAnio(int anio){
-    this.anio = anio;
+    public void setAnioEdit(int anioEdit){
+    this.anioEdit = anioEdit;
     }
 
-    public int getAnio(){
-        return anio;
+    public int getAnioEdit(){
+        return anioEdit;
     }
 
+    //--------------------------------
+        public String toString(){
+        
+            return "[" + this.nombreEdit + "] [" + this.anioEdit + "]";
+
+        }
 }
 
