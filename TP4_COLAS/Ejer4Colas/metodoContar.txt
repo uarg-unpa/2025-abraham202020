@@ -1,0 +1,41 @@
+
+en el codigo:
+
+public int contar() {
+    ColaCircular aux = new ColaCircular();
+    int c = 0;
+    while (!this.estaVacia()) {
+        aux.insertar(this.borrar());
+        c = c + 1;
+    }
+    return c;
+}
+
+-------------------------------------------------
+
+public int contar() {
+    ColaCircular aux = new ColaCircular();
+    int c = 0;
+    while (!this.estaVacia()) {
+        aux.insertar(this.borrar());
+        c = c + 1;
+    }
+    while (!aux.estaVacia()) {
+        this.insertar(aux.borrar());
+    }
+    return c;
+}
+
+
+en el main: 
+
+int n = c.contar();
+System.out.println("cantidad: " + n);
+c.borrar();
+
+System.out.println("cantidad: " + c.contar());
+while (!c.estaVacia()) {
+    System.out.print(c.borrar() + "|");
+}
+
+ME QUEDE EN EL MIN 26:18 DE CLASE 2 DE COLAS

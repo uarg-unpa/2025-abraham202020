@@ -1,0 +1,59 @@
+
+en el codigo:
+
+public boolean sonIguales(ColaInt c) {
+    boolean distintos = false; int valor;
+
+    ColaInt aux = new ColaInt();
+
+    while (!c.estaVacia() & !distintos) {
+        valor = this.borrar();
+    
+        if (c.borrar() != valor)
+            distintos = true;
+        aux.insertar(valor);
+    }
+
+    while (!this.estaVacia()) {
+        aux.insertar(this.borrar());
+    }
+
+
+    while (!aux.estaVacia()) {
+        this.insertar(aux.borrar());
+    }
+    return !distintos;
+}
+
+
+en el main: 
+
+ColaInt c1 = new ColaInt();
+ColaInt c2 = new ColaInt();
+
+c1.insertar(1);
+c1.insertar(2);
+c1.insertar(3);
+c2.insertar(1);
+c2.insertar(2);
+c2.insertar(3);
+
+
+if (c2.sonIguales(c1))
+        System.out.println("son iguales");
+else 
+        System.out.println("no son iguales");
+
+    System.out.println("c1: ");
+    
+    while (!c1.estaVacia()) {
+        System.out.print(c1.borrar() + " | ");
+    }
+
+System.out.println();
+    
+    System.out.println("c2");
+
+    while (!c2.estaVacia()) {
+        System.out.print(c2.borrar() + " | ");
+    }
